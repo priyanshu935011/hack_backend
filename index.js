@@ -15,6 +15,7 @@ app.use("/api/team", require("./routes/team"));
 app.use("/api/participants", require("./routes/participants"));
 app.use("/api/project", require("./routes/project"));
 
-app.listen(8000, () => {
-  console.log(`Listening at port 8000`);
+app.listen(PORT, () => {
+  console.log(`Listening at port ${PORT}`);
 });
+
