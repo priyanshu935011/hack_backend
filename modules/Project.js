@@ -20,10 +20,15 @@ const ProjectSchema = new Schema({
     require: true,
   },
   presentation: {
-    type: Object,
+    type: String,
+    require: true,
+  },
+   status: {
+    type: Number,
     require: true,
   },
 });
 
 const Project = mongoose.model("project", ProjectSchema);
 module.exports = Project;
+
