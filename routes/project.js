@@ -54,4 +54,20 @@ router.post("/update", async (req, res) => {
   }
 });
 
+router.post("/transaction", async (req, res) => {
+  try {
+    const { transactionId, projectId } = req.body;
+    const checkProject = await Project.findById({ _id: projectId });
+    if (checkProject) {
+      const transactionUpdate = await Project.updateOne(
+        { _id: projectId },
+        { transactionId: transactionId }
+      );
+      res.status(200).json("Success");
+    }
+  } catch {
+    res.status(400).json("Internal Error");
+  }
+});
+
 module.exports = router;
